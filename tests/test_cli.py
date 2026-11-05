@@ -73,9 +73,7 @@ def test_unknown_model_returns_two_with_message_on_stderr(
     assert "unknown_model" in captured.err
 
 
-def test_token_options_and_file_input(
-    tmp_path: Path, capsys: pytest.CaptureFixture[str]
-) -> None:
+def test_token_options_and_file_input(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     path = _write_table(tmp_path)
     source = tmp_path / "prompt.txt"
     source.write_text("a" * 4000, encoding="utf-8")
@@ -98,9 +96,7 @@ def test_cached_tokens_error_returns_two(
     assert "invalid_argument" in capsys.readouterr().err
 
 
-def test_io_and_parse_errors_return_two(
-    tmp_path: Path, capsys: pytest.CaptureFixture[str]
-) -> None:
+def test_io_and_parse_errors_return_two(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     path = _write_table(tmp_path)
     missing = str(tmp_path / "missing.txt")
     base = ["estimate", "--provider", "fx", "--model", "m1", "--table", path]
@@ -144,9 +140,7 @@ def test_missing_command_and_help(capsys: pytest.CaptureFixture[str]) -> None:
     assert "usage" in capsys.readouterr().out.lower()
 
 
-def test_models_command_lists_table(
-    tmp_path: Path, capsys: pytest.CaptureFixture[str]
-) -> None:
+def test_models_command_lists_table(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     path = _write_table(tmp_path)
     assert main(["models", "--table", path]) == 0
     payload = json.loads(capsys.readouterr().out)

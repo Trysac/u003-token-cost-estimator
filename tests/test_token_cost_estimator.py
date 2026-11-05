@@ -117,9 +117,7 @@ def test_cache_write_pricing_and_total_is_sum_of_components() -> None:
     assert result.cached_cost == Decimal("0.000030")
     assert result.cache_write_cost == Decimal("0.000750")
     assert result.output_cost == Decimal("0.007500")
-    parts = (
-        result.input_cost + result.cached_cost + result.cache_write_cost + result.output_cost
-    )
+    parts = result.input_cost + result.cached_cost + result.cache_write_cost + result.output_cost
     assert result.total == parts == Decimal("0.010380")
 
 
