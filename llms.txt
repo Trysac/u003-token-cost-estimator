@@ -1,0 +1,16 @@
+# token-cost-estimator
+
+> Estimate tokens and cost of an LLM request before sending it, from a dated, overridable pricing table with cached-input and cache-write rates, Decimal only Python package `trysac-token-cost-estimator`, import name `token_cost_estimator`, MIT licensed,
+> Python >= 3.10, no runtime dependencies.
+
+## Docs
+
+- [README](README.md): problem, install, usage example
+- [AGENTS](AGENTS.md): commands, folder map, conventions, limits
+- [Architecture](docs/ARCHITECTURE.md): shape of the package and its public API
+- [Testing](docs/TESTING.md): how to run and extend the tests
+
+## Optional
+
+- [Stack](docs/STACK.md): tools used and discarded
+- [Changelog](CHANGELOG.md): release history
