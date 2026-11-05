@@ -19,6 +19,9 @@ classifiers = [
 ]
 dependencies = []
 
+[project.scripts]
+token-cost-estimator = "token_cost_estimator.__main__:main"
+
 [project.urls]
 Homepage = "https://github.com/Trysac/u003-token-cost-estimator"
 Source = "https://github.com/Trysac/u003-token-cost-estimator"

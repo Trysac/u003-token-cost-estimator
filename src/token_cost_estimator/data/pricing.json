@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "version": "2026-11-05",
+  "as_of": "2026-11-05",
+  "currency": "USD",
+  "models": [
+    {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5",
+      "input_per_mtok": 3,
+      "output_per_mtok": 15,
+      "cached_input_per_mtok": 0.30,
+      "cache_write_per_mtok": 3.75,
+      "context_window": 200000,
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "input_per_mtok": 1,
+      "output_per_mtok": 5,
+      "cached_input_per_mtok": 0.10,
+      "cache_write_per_mtok": 1.25,
+      "context_window": 200000,
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+    }
+  ]
+}

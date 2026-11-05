@@ -9,4 +9,5 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
+- Add `token_cost_estimator`: dependency-free token and cost estimation with a dated, overridable Decimal pricing table (cached-input and cache-write rates), typed errors and an `estimate`/`models` CLI.
 - Initial project structure from the factory utility template.
