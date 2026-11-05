@@ -82,6 +82,7 @@ def test_version() -> None:
 
 
 def test_acceptance_example() -> None:
+    """Fixture (provider 'fx', model 'm1', input_per_mtok Decimal('3.00'), output_per_mtok Decimal('15.00'), cached_input_per_mtok Decimal('0.30')), estimate('a' * 4000, provider='fx', model='m1', table=T, expected_output_tokens=500, cached_input_tokens=200) returns input_tokens == 1000, input_cost == Decimal('0.002400'), cached_cost == Decimal('0.000060'), output_cost == Decimal('0.007500') and total == Decimal('0.009960')."""
     result = estimate(
         "a" * 4000,
         provider="fx",

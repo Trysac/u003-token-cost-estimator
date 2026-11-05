@@ -52,6 +52,7 @@ def test_estimate_prints_sorted_json_and_returns_zero(
 def test_max_cost_exceeded_returns_one_and_still_prints(
     tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
+    """Adding ['--max-cost', '0'] returns 1 and still prints, and '--model', 'nope' is separate."""
     path = _write_table(tmp_path)
     assert main(_estimate_args(path, "--max-cost", "0")) == 1
     assert '"total": "0.000003"' in capsys.readouterr().out
