@@ -80,8 +80,11 @@ def test_token_options_and_file_input(
     source = tmp_path / "prompt.txt"
     source.write_text("a" * 4000, encoding="utf-8")
     code = main(
-        ["estimate", "--provider", "fx", "--model", "m1", "--file", str(source), "--table", path]
-        + ["--output-tokens", "500", "--cached-tokens", "200"]
+        [
+            *["estimate", "--provider", "fx", "--model", "m1"],
+            *["--file", str(source), "--table", path],
+            *["--output-tokens", "500", "--cached-tokens", "200"],
+        ]
     )
     assert code == 0
     assert json.loads(capsys.readouterr().out)["total"] == "0.009960"

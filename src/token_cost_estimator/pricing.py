@@ -104,7 +104,9 @@ class PricingTable:
             price = _parse_model(item, position)
             key = (price.provider, price.model)
             if key in seen:
-                raise PricingTableError("duplicate provider/model pair", f"models[{position}].model")
+                raise PricingTableError(
+                    "duplicate provider/model pair", f"models[{position}].model"
+                )
             seen.add(key)
             models.append(price)
         return cls(version=version, as_of=as_of, currency=currency, models=tuple(models))
@@ -185,7 +187,9 @@ def _require(mapping: Mapping[str, Any], key: str, prefix: str) -> Any:
 
 def _text(value: object, field_name: str, limit: int) -> str:
     if not isinstance(value, str) or not value or len(value) > limit:
-        raise PricingTableError(f"must be a non-empty string of at most {limit} characters", field_name)
+        raise PricingTableError(
+            f"must be a non-empty string of at most {limit} characters", field_name
+        )
     return value
 
 
@@ -258,7 +262,9 @@ def _parse_model(item: object, position: int) -> ModelPrice:
     return ModelPrice(
         provider=_name(_require(item, "provider", prefix), f"{prefix}provider"),
         model=_name(_require(item, "model", prefix), f"{prefix}model"),
-        input_per_mtok=_decimal(_require(item, "input_per_mtok", prefix), f"{prefix}input_per_mtok"),
+        input_per_mtok=_decimal(
+            _require(item, "input_per_mtok", prefix), f"{prefix}input_per_mtok"
+        ),
         output_per_mtok=_decimal(
             _require(item, "output_per_mtok", prefix), f"{prefix}output_per_mtok"
         ),

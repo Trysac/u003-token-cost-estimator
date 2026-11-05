@@ -463,7 +463,7 @@ def test_exceeds_context() -> None:
 
 
 def test_logging_never_contains_input_text(caplog: pytest.LogCaptureFixture) -> None:
-    secret = "SUPER-SECRET-PROMPT"
+    secret = "SUPER-SECRET-PROMPT"  # noqa: S105
     with caplog.at_level(logging.DEBUG, logger="token_cost_estimator"):
         estimate(secret, provider="fx", model="m1", table=T)
     assert caplog.records
